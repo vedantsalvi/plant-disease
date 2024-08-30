@@ -1,0 +1,112 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fertilizer Calculator</title>
+    <style>
+        /* CSS code goes here */
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .plot-size {
+            margin: 20px 0;
+        }
+
+        .plot-size label {
+            margin-right: 10px;
+        }
+
+        .buttons {
+            margin: 20px 0;
+        }
+
+        .buttons button {
+            margin: 0 10px;
+            padding: 10px 20px;
+            font-size: 16px;
+        }
+
+        #calculateBtn {
+            padding: 10px 20px;
+            font-size: 18px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        #result {
+            margin-top: 20px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Fertilizer Calculator</h1>
+        
+       
+        <div class="plot-size">
+            <label for="plotSize">Your plot size (Acres):</label>
+            <input type="number" id="plotSize" placeholder="Enter plot size">
+        </div>
+
+      
+        <div class="buttons">
+            <button id="potatoBtn">Potato</button>
+            <button id="tomatoBtn">Tomato</button>
+            <button id="bellPepperBtn">Bell Pepper</button>
+        </div>
+
+        
+        <button id="calculateBtn">Calculate</button>
+        
+       
+        <div id="result" class="result"></div>
+    </div>
+
+    <script>
+        document.getElementById('calculateBtn').addEventListener('click', function() {
+    const plotSize = document.getElementById('plotSize').value;
+    const resultDiv = document.getElementById('result');
+    let fertilizerAmount = 0;
+
+    if (selectedPlant === 'Potato') {
+        fertilizerAmount = plotSize * 1500; 
+    } else if (selectedPlant === 'Tomato') {
+        fertilizerAmount = plotSize * 1500; 
+    } else if (selectedPlant === 'Bell Pepper') {
+        fertilizerAmount = plotSize * 2000; 
+    }
+
+    if (plotSize && fertilizerAmount) {
+        resultDiv.textContent = `For ${plotSize} acres of ${selectedPlant}, you need ${fertilizerAmount} lbs of 10-10-10 fertilizer.`;
+    } else {
+        resultDiv.textContent = 'Please enter a plot size and select a plant.';
+    }
+});
+
+let selectedPlant = '';
+
+document.getElementById('potatoBtn').addEventListener('click', function() {
+    selectedPlant = 'Potato';
+});
+
+document.getElementById('tomatoBtn').addEventListener('click', function() {
+    selectedPlant = 'Tomato';
+});
+
+document.getElementById('bellPepperBtn').addEventListener('click', function() {
+    selectedPlant = 'Bell Pepper';
+});
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Farm Disease Diagnostic Portal</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'myapp/styles.css' %}">
+</head>
+<body>
+    
+    <header>
+        <div class="top-links">
+            <a href="#">Login</a>
+            <a href="#">Signup</a>
+            <a href="#">Contact Us</a>
+            <a href="#">Help</a>
+        </div>
+        <h1 style="color: white;">Farm Disease Diagnostic Portal</h1>
+        <p>Your AI-powered assistant for crop and livestock health</p>
+    </header>
+
+   
+    <div style="
+    width: 100%;
+    height: 460px;
+    background-image: url('{% static "myapp/images/farmer.png" %}');
+    background-size: cover;
+    background-position: center;
+    position: relative;">
+    </div>
+
+   
+    <div class="nav-icons">
+        
+        <a href="{% url 'disease_diagnosis' %}">
+            <div class="icon">
+                <img src="{% static 'myapp/images/DD.png' %}" alt="Diagnosis">
+                <p>Disease Diagnosis</p>
+            </div>
+        </a>
+
+       
+        <a href="ai_assistant.html">
+            <div class="icon">
+                <img src="{% static 'myapp/images/Ai.png' %}" alt="AI Assistant">
+                <p>AI Assistant</p>
+            </div>
+        </a>
+
+        <!-- Report Issue Icon with Link -->
+        <a href="report_issue.html">
+            <div class="icon">
+                <img src="{% static 'myapp/images/image3.png' %}" alt="Report Issue">
+                <p>Report Issue</p>
+            </div>
+        </a>
+
+        <!-- Fertilizer Calculator Icon with Link -->
+    	<a href="{% url 'fertilizer_calculator' %}">
+        <div class="icon">
+            <img src="{% static 'myapp/images/calci.png' %}" alt="Fertilizer Calculator">
+            <p>Fertilizer Calculator</p>
+        </div>
+    </a>
+    </div>
+
+    <!-- Information Section -->
+    <div class="info-box">
+        <h2>Welcome to the Farm Disease Diagnostic Portal</h2>
+        <p>We empower farmers with the tools to diagnose and manage diseases affecting their crops and livestock.</p>
+    </div>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2024 Farm Disease Diagnostic Portal. All rights reserved.</p>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+        <a href="#">Social Media</a>
+    </footer>
+</body>
+</html>
